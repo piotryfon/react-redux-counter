@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Counter from './components/Counter';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,5 +12,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
