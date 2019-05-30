@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class Counter extends React.Component {
     constructor() {
@@ -23,5 +24,17 @@ class Counter extends React.Component {
         )
     }
 }
-export default Counter;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onIncrement : () => dispatch({type: 'INCREMENT' }),
+        onDecrement: () => dispatch({ type: 'DECREMENT' })
+    }
+}
+const mapStateToProps = state => {
+    return {
+        result : state.result
+    }
+}
+const CounterComponent = connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default CounterComponent;
 

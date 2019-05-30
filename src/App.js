@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/Counter';
 import store from './store/store';
+import {Provider} from 'react-redux';
+import CounterComponent from './components/Counter';
 
 const App = () => {
   return (
@@ -9,7 +10,10 @@ const App = () => {
       <header className="App-header">
         <h1>Simple counter</h1>
       </header>
-      <Counter />
+      <Provider store={store}>
+        <CounterComponent />
+      </Provider>
+     
     </div>
   );
 }
