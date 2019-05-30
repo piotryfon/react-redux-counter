@@ -13,7 +13,6 @@ const App = () => {
       <Provider store={store}>
         <CounterComponent />
       </Provider>
-     
     </div>
   );
 }
